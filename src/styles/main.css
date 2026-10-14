@@ -4066,22 +4066,6 @@ h4 {
     grid-template-columns: 1fr;
     text-align: left;
     gap: var(--space-xl);
-    padding-top: 20px;
-  }
-
-  .hero-col-right {
-    display: none; /* No mobile, foca na conversão limpa com background cinematográfico */
-  }
-
-  .hero.hero-modern {
-    min-height: auto;
-    padding-top: calc(var(--header-height) + 28px);
-    padding-bottom: 110px;
-@media (max-width: 992px) {
-  .hero-container-modern {
-    grid-template-columns: 1fr;
-    text-align: left;
-    gap: var(--space-xl);
     padding-top: 16px;
     padding-bottom: 20px;
     z-index: 2;
