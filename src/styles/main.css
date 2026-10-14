@@ -3556,3 +3556,676 @@ h4 {
   color: var(--gray-medium);
   font-style: italic;
 }
+
+/* =========================================================
+   HERO SECTION MODERN (Dark Theme, Mobile-First, Marquee)
+   ========================================================= */
+
+.hero.hero-modern {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: calc(var(--header-height) + 24px) 0 80px;
+  background-color: #070809;
+  overflow: hidden; /* Evita qualquer rolagem horizontal */
+  box-sizing: border-box;
+}
+
+/* Background com imagem e degradê mesclado escuro */
+.hero-bg-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url('/images/barber1.jpg');
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: brightness(0.48) contrast(1.15) grayscale(20%);
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  /* Degradê denso que funde o fundo preto do lado esquerdo com a imagem no lado direito */
+  background: 
+    radial-gradient(circle at 80% 40%, rgba(20, 24, 28, 0.45) 0%, rgba(7, 8, 9, 0.95) 75%),
+    linear-gradient(90deg, #070809 0%, rgba(7, 8, 9, 0.96) 42%, rgba(7, 8, 9, 0.72) 70%, rgba(7, 8, 9, 0.5) 100%),
+    linear-gradient(180deg, rgba(7, 8, 9, 0.8) 0%, transparent 25%, transparent 70%, #070809 100%);
+}
+
+/* Container do Grid */
+.hero-container-modern {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: var(--space-2xl);
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-bottom: 24px;
+}
+
+/* Coluna Esquerda: Conteúdo */
+.hero-col-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  z-index: 2;
+}
+
+/* Badge Superior BEM-VINDO(A) */
+.hero-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  color: #cfd8dc;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Badge Verde em Destaque */
+.hero-badge-pill.green-badge {
+  background: rgba(34, 197, 94, 0.12);
+  border-color: rgba(34, 197, 94, 0.35);
+  color: #4ade80;
+}
+
+.hero-badge-pill.green-badge .hero-badge-dot {
+  background-color: #22c55e;
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
+}
+
+.hero-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #A0AAB2;
+  box-shadow: 0 0 8px rgba(160, 170, 178, 0.9);
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.75); }
+}
+
+/* Sub-badge com ícone */
+.hero-sub-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #9aa5af;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+.hero-sub-badge svg {
+  color: #c5d0d8;
+}
+
+/* Título de Impacto */
+.hero-title-modern {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 4.8vw, 4.2rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: #ffffff;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+}
+
+/* Subtítulo descritivo */
+.hero-desc-modern {
+  font-size: clamp(0.92rem, 1.3vw, 1.05rem);
+  line-height: 1.65;
+  color: #a8b3bc;
+  max-width: 520px;
+  margin-bottom: 28px;
+}
+
+/* Ações e Botão CTA */
+.hero-actions-modern {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-btn-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 13px 30px;
+  background: rgba(18, 20, 23, 0.8);
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.hero-btn-cta:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.8);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.75), 0 0 18px rgba(255, 255, 255, 0.25);
+}
+
+.hero-btn-cta svg {
+  transition: transform 0.25s ease;
+}
+
+.hero-btn-cta:hover svg {
+  transform: translateX(4px);
+}
+
+/* Coluna Direita: Imagem Feathery / Desvanecida Suave no Fundo Preto */
+.hero-col-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-feathered-showcase {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-feathered-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  /* Suavização feathery com mask-image radial para mesclar ao preto profundo sem borda rígida */
+  -webkit-mask-image: radial-gradient(ellipse 70% 65% at 50% 50%, #000 35%, rgba(0,0,0,0.6) 65%, transparent 100%);
+  mask-image: radial-gradient(ellipse 70% 65% at 50% 50%, #000 35%, rgba(0,0,0,0.6) 65%, transparent 100%);
+  filter: contrast(1.1) brightness(0.95);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-feathered-showcase:hover .hero-feathered-img {
+  transform: scale(1.03);
+}
+
+.hero-feather-mask {
+  position: absolute;
+  inset: -15px;
+  pointer-events: none;
+  background: radial-gradient(ellipse 70% 65% at 50% 50%, transparent 40%, rgba(7, 8, 9, 0.8) 75%, #070809 100%);
+}
+
+/* =========================================================
+   FAIXAS INFERIORES INCLINADAS COM ANIMAÇÃO MARQUEE (GROSSAS)
+   ========================================================= */
+
+.hero-marquee-wrapper {
+  position: absolute;
+  bottom: -25px;
+  left: -10%;
+  width: 120%;
+  height: 165px;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 10;
+  /* Anti-aliasing para garantir bordas e renderização nítida sem serrilhado */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.hero-marquee-strip {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 64px; /* Mais grossa e imponente */
+  background: #181b1e;
+  border-top: 2px solid rgba(255, 255, 255, 0.28);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Faixa 1: Rotação suave no sentido horário */
+.hero-marquee-strip.strip-1 {
+  bottom: 50px;
+  transform: rotate(-3deg);
+  background: #22262b;
+  z-index: 2;
+  opacity: 0.98;
+}
+
+/* Faixa 2: Rotação suave no sentido anti-horário (cruzando) */
+.hero-marquee-strip.strip-2 {
+  bottom: 8px;
+  transform: rotate(2.2deg);
+  background: #131618;
+  z-index: 3;
+}
+
+.marquee-track {
+  display: inline-flex;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.marquee-track span {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 1.25rem; /* Tipografia nítida, maiúscula e elegante */
+  font-weight: 700;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 0 16px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Animação Contínua Infinita */
+.track-left {
+  animation: scrollMarqueeLeft 30s linear infinite;
+}
+
+.track-right {
+  animation: scrollMarqueeRight 35s linear infinite;
+}
+
+@keyframes scrollMarqueeLeft {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scrollMarqueeRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+/* =========================================================
+   ACTION BLOCKS (CARDS MODERNOS DE NAVEGAÇÃO INTERATIVA)
+   ========================================================= */
+
+.section-action-blocks {
+  position: relative;
+  padding: 40px 0 30px;
+  background-color: var(--black-deep);
+  z-index: 5;
+}
+
+.action-blocks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* Os 2 últimos cards na linha de baixo ficam mais largos no desktop */
+.action-blocks-grid .card-location {
+  grid-column: span 1;
+}
+
+.action-blocks-grid .card-social {
+  grid-column: span 2;
+}
+
+.action-block-card {
+  position: relative;
+  background: #14171a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  padding: 22px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  text-decoration: none;
+  min-height: 145px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.action-block-card:hover {
+  transform: translateY(-4px);
+  background: #1a1e22;
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7), 0 0 20px rgba(160, 170, 178, 0.12);
+}
+
+/* Texto de fundo grande (Marca d'água elegante) */
+.action-block-watermark {
+  position: absolute;
+  right: 15px;
+  bottom: -15px;
+  font-family: var(--font-heading);
+  font-size: 5rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.035);
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+}
+
+.action-block-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 65%;
+}
+
+.action-block-pill {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #a0aab2;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.action-block-pill.whatsapp-pill {
+  color: #25D366;
+  background: rgba(37, 211, 102, 0.12);
+  border: 1px solid rgba(37, 211, 102, 0.25);
+}
+
+.action-block-title {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+}
+
+.action-block-sub {
+  font-size: 0.74rem;
+  color: #8c96a0;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+
+.action-block-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: #23272b;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  color: #e5edf2;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.action-block-card:hover .action-block-btn {
+  background: #ffffff;
+  color: #08090A;
+  border-color: #ffffff;
+}
+
+.action-block-visual {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.visual-clipper-icon,
+.visual-scissors-icon,
+.visual-whatsapp-badge,
+.visual-map-badge,
+.visual-insta-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.action-block-card:hover .action-block-visual > div {
+  transform: scale(1.1) rotate(-3deg);
+}
+
+.visual-clipper-icon {
+  color: #c5d0d8;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.6));
+}
+
+.visual-scissors-icon {
+  color: #c5d0d8;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.6));
+}
+
+.visual-whatsapp-badge {
+  color: #25D366;
+  filter: drop-shadow(0 4px 12px rgba(37, 211, 102, 0.35));
+}
+
+.visual-map-badge {
+  filter: drop-shadow(0 6px 14px rgba(255, 77, 77, 0.4));
+}
+
+.visual-insta-badge {
+  color: #E1306C;
+  filter: drop-shadow(0 6px 14px rgba(225, 48, 108, 0.4));
+}
+
+/* =========================================================
+   RESPONSIVIDADE MOBILE-FIRST AVANÇADA
+   ========================================================= */
+
+@media (max-width: 992px) {
+  .hero-container-modern {
+    grid-template-columns: 1fr;
+    text-align: left;
+    gap: var(--space-xl);
+    padding-top: 20px;
+  }
+
+  .hero-col-right {
+    display: none; /* No mobile, foca na conversão limpa com background cinematográfico */
+  }
+
+  .hero.hero-modern {
+    min-height: auto;
+    padding-top: calc(var(--header-height) + 28px);
+    padding-bottom: 110px;
+  }
+
+  .hero-bg-media {
+    background-position: center 30%;
+    filter: brightness(0.35) contrast(1.1) grayscale(20%);
+  }
+
+  .hero-bg-overlay {
+    background: 
+      linear-gradient(180deg, rgba(7, 8, 9, 0.88) 0%, rgba(7, 8, 9, 0.72) 40%, rgba(7, 8, 9, 0.95) 90%, #070809 100%);
+  }
+
+  .hero-marquee-wrapper {
+    height: 110px;
+    bottom: -15px;
+    left: -12%;
+    width: 124%;
+  }
+
+  .hero-marquee-strip {
+    height: 48px;
+  }
+
+  .hero-marquee-strip.strip-1 {
+    bottom: 36px;
+  }
+
+  .hero-marquee-strip.strip-2 {
+    bottom: 6px;
+  }
+
+  .marquee-track span {
+    font-size: 0.95rem;
+    letter-spacing: 1.6px;
+  }
+
+  .action-blocks-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .action-blocks-grid .card-location,
+  .action-blocks-grid .card-social {
+    grid-column: span 1;
+  }
+
+  .action-blocks-grid .card-social {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero.hero-modern {
+    padding-top: calc(var(--header-height) + 20px);
+    padding-bottom: 95px;
+  }
+
+  .hero-badge-pill {
+    padding: 4px 12px;
+    font-size: 0.65rem;
+    margin-bottom: 10px;
+  }
+
+  .hero-sub-badge {
+    font-size: 0.74rem;
+    margin-bottom: 12px;
+  }
+
+  .hero-title-modern {
+    font-size: clamp(2rem, 9vw, 2.7rem);
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+  }
+
+  .hero-desc-modern {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    margin-bottom: 22px;
+  }
+
+  .hero-btn-cta {
+    width: 100%;
+    padding: 13px 20px;
+    font-size: 0.88rem;
+  }
+
+  /* Faixas Marquee no Mobile (Mais espessas e nítidas) */
+  .hero-marquee-wrapper {
+    height: 110px;
+    bottom: -15px;
+    left: -14%;
+    width: 128%;
+  }
+
+  .hero-marquee-strip {
+    height: 48px; /* Ainda mais encorpada e nítida no mobile */
+    border-width: 1.5px;
+  }
+
+  .hero-marquee-strip.strip-1 {
+    bottom: 36px;
+    transform: rotate(-3deg);
+  }
+
+  .hero-marquee-strip.strip-2 {
+    bottom: 6px;
+    transform: rotate(2.4deg);
+  }
+
+  .marquee-track span {
+    font-size: 0.95rem;
+    letter-spacing: 1.4px;
+    padding: 0 10px;
+  }
+
+  /* Suavização da imagem feathered no mobile */
+  .hero-feathered-showcase {
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    margin-top: 10px;
+  }
+
+  /* Cards de Ação no Mobile: 1 coluna elegante facilitando o clique com o polegar */
+  .section-action-blocks {
+    padding: 24px 0 20px;
+  }
+
+  .action-blocks-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .action-blocks-grid .card-location,
+  .action-blocks-grid .card-social {
+    grid-column: span 1;
+  }
+
+  .action-block-card {
+    min-height: 120px;
+    padding: 18px 18px;
+    border-radius: 14px;
+  }
+
+  .action-block-title {
+    font-size: 1.3rem;
+  }
+
+  .action-block-watermark {
+    font-size: 4rem;
+    right: 10px;
+  }
+}
